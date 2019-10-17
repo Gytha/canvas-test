@@ -1,0 +1,129 @@
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+	width: 10px;
+  height: 10px;/*这部分加上滚动条箭头不显示*/
+  background-color: #F5F5F5;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	background-color: #bdbdbd;
+}
+
+/*滑块效果*/
+::-webkit-scrollbar-thumb:hover {
+	border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.4);
+}
+
+/*IE滚动条颜色*/
+html {
+	scrollbar-face-color: #bfbfbf;
+	/*滚动条颜色*/
+	scrollbar-highlight-color: #000;
+	scrollbar-3dlight-color: #000;
+	scrollbar-darkshadow-color: #000;
+	scrollbar-Shadow-color: #adadad;
+	/*滑块边色*/
+	scrollbar-arrow-color: rgba(0, 0, 0, 0.4);
+	/*箭头颜色*/
+	scrollbar-track-color: #eeeeee;
+	/*背景颜色*/
+}
+.menu-icon {
+  margin-left: .5rem;
+  font-size: 4vw;
+}
+// 导航条下拉菜单
+.menu-dropdown {
+  width: 100%!important;
+  &::-webkit-scrollbar {
+    // 可以滚动但隐藏滚动条
+    display: none;
+  }
+}
+// <link rel="stylesheet" type="text/css" href="../src/assets/xs.scss"  media="screen and (max-width: 575px)">
+// <link rel="stylesheet" type="text/css" href="../src/assets/sm.css"  media="screen and (min-width: 576px) and (max-width: 767px)">
+// <link rel="stylesheet" type="text/css" href="../src/assets/md.css"  media="screen and (min-width: 768px) and (max-width: 991px)">
+// <link rel="stylesheet" type="text/css" href="../src/assets/lg.css"  media="screen and (min-width: 992px) and (max-width: 1199px)">
+// <link rel="stylesheet" type="text/css" href="../src/assets/xl.css"  media="screen and (min-width: 1200px)">
+@media screen and (max-width: 575px) {
+  .home-top {
+    margin: 3.5rem 0 0!important;
+  }
+  .home-top {
+    margin-top: 4vh!important;
+  }
+  .mission {
+    flex-direction: column;
+    img {
+      width: 100%;
+    }
+    &>div {
+      width: 100%;
+      margin-left: 0!important;
+      margin-right: 0!important;
+    }
+  }
+  // 页脚
+  .footer .footer-content &>div {
+    flex-direction: column;
+    .copyright {
+      display: flex;;
+      flex-direction: column;
+    }
+    img {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .mission {
+    img {
+      // width: 50vw;
+    }
+  }
+  // 页脚
+  .footer .footer-content &>div {
+    flex-direction: column;
+    .copyright {
+      display: flex;;
+      flex-direction: column;
+    }
+    img {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .mission {
+    img {
+      width: 50vw;
+    }
+  }
+  .home-top {
+    margin: 1rem 0!important;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .home-top {
+    margin: .7rem 0!important;
+  }
+}
+@media screen and (min-width: 1200px) {
+}

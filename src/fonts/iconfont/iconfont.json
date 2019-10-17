@@ -1,0 +1,51 @@
+{
+  "id": "1462178",
+  "name": "嗨翻网",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "118357",
+      "name": "电邮",
+      "font_class": "dianyou",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "262617",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "392825",
+      "name": "qq",
+      "font_class": "0052",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "1193173",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "1308522",
+      "name": "twitter",
+      "font_class": "twitter",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "3310793",
+      "name": "Facebook",
+      "font_class": "f-copy",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    }
+  ]
+}
