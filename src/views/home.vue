@@ -96,6 +96,7 @@
       </i-col>
     </Row>
     <Row type="flex" justify="center" class="why-choose">
+      <h1>为什么选择Hitranslator</h1>
       <i-col span="22" :md="19" :lg="22" :xl="17">
         <div v-for="(item,index) in choose" :key="index">
           <i :class="['iconfont', item.icon]"></i>
@@ -310,10 +311,12 @@ $bg-color: #16ab8e;
 }
 .why-choose {
   margin-top: 2rem;
+  color: $bg-color;
   &>div {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    margin-top: 1rem;
     &>div {
       flex: 1 0 1;
       display: flex;
@@ -323,7 +326,6 @@ $bg-color: #16ab8e;
       width: 12rem;
       padding: 1rem;
       margin-bottom: 1rem;
-      color: $bg-color;
       background: rgb(247,247,247);
       i {
         font-size: 2rem;
