@@ -72,10 +72,10 @@ html {
   .mission {
     flex-direction: column;
     img {
-      width: 100%;
+      width: 100%!important;
     }
     &>div {
-      width: 100%;
+      width: 100%!important;
       margin-left: 0!important;
       margin-right: 0!important;
     }
@@ -93,11 +93,11 @@ html {
   }
 }
 @media screen and (min-width: 576px) and (max-width: 767px) {
-  .mission {
-    img {
-      // width: 50vw;
-    }
-  }
+  // .mission {
+  //   img {
+  //     width: 50vw;
+  //   }
+  // }
   // 页脚
   .footer .footer-content &>div {
     flex-direction: column;
@@ -113,7 +113,7 @@ html {
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .mission {
     img {
-      width: 50vw;
+      width: 50vw!important;
     }
   }
   .home-top {

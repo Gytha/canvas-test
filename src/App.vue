@@ -2,9 +2,10 @@
   <div id="app">
     <spin :spinShow="spinShow" />
     <Row type="flex" justify="center">
-      <i-col span="22" :md="23" :lg="23" :xl="18" style="z-index:1;">
+      <i-col span="22" :md="23" :lg="23" :xl="18" class="top-bar">
         <!-- <div v-if="screenWidth>=767"><br/><br/></div> -->
-        <Affix :offset-top="20" class="affix">
+        <!-- <Affix :offset-top="20" class="affix"> -->
+        <div class="div-affix">
           <div class="header">
             <img src="./resource/images/logo.png" alt="" style="height: 1.7rem;cursor: pointer;">
             <div v-if="screenWidth>=992">
@@ -47,7 +48,8 @@
               </div>
             </div>
           </div>
-        </Affix>
+        </div>
+        <!-- </Affix> -->
       </i-col>
     </Row>
     <div class="container">
@@ -176,15 +178,32 @@ $bg-color: #16ab8e;
 #app {
   position: relative;
 }
+.top-bar {
+  position:relative;
+  z-index:20;
+}
 .affix {
   width: auto;
   &>div {
     left:auto!important;
-    // width:inherit!important;
+    width:100%!important;
   }
   & /deep/ div.ivu-affix {
+    // width: calc(100% - 2rem)!important;
+    margin: 0 auto;
     box-shadow: 0px 20px 20px -20px #5e5e5e;
     background: #fff;
+  }
+}
+.div-affix {
+  position: fixed;
+  top: 20px;
+  width: inherit;
+  &>div {
+    box-shadow: 0px 20px 20px -20px #5e5e5e;
+    background: #fff;
+    left:auto!important;
+    width:100%!important;
   }
 }
 .header {
@@ -226,13 +245,14 @@ $bg-color: #16ab8e;
 // 内容区
 .container {
   // position: relative;
-  margin-top: 1rem;
+  margin-top: 4.6rem;
 }
 .footer {
   position: fixed;
   bottom: 0;
   padding: 1rem 0;
   width: 100%;
+  z-index: 200;
   background: #f5f5f5;
   .footer-content {
     color: $font-color;
