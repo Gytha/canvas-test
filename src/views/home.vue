@@ -45,37 +45,6 @@
         <img src="../resource/images/user.png" alt="mission">
       </i-col>
     </Row>
-    <!-- <Row type="flex" justify="center">
-      <i-col class="home-content" span="22" :md="20" :lg="22" :xl="17" :style="{marginBottom: `${footerHeight}px`}">
-        <div class="mission">
-          <div class="contact-detail">
-            <h2>Hitranslator快速找到所需译者</h2>
-            <p>聚集全球译者，链接用户和译者，让用户快速找到全球各地的译者，由译者为用户提供本地化服务</p>
-            <p>您也可以<span>发布</span>招募信息，<span>查看</span>最新的招募项目</p>
-            <div class="language">
-              <div>源语言</div>
-              <div>目标语言</div>
-              <div>搜索</div>
-            </div>
-            <div class="number">
-              <div>
-                <h2>8023</h2>
-                <p>译者人数</p>
-              </div>
-              <div>
-                <h2>64</h2>
-                <p>分布地区</p>
-              </div>
-              <div>
-                <h2>274</h2>
-                <p>语种互译</p>
-              </div>
-            </div>
-          </div>
-          <img src="../resource/images/user.png" alt="mission">
-        </div>
-      </i-col>
-    </Row> -->
     <Row type="flex" justify="center" class="translator">
       <i-col span="22" :md="20" :lg="22" :xl="17">
         <h2>AI翻译+人工翻译助力网文出海</h2>
@@ -105,27 +74,16 @@
         </div>
       </i-col>
     </Row>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <Row type="flex" justify="center" class="logo" :style="{marginBottom: `${footerHeight}px`}">
+      <h1>合作伙伴</h1>
+      <i-col span="22" :md="19" :lg="22" :xl="17">
+        <div v-for="(item,index) in logos" :key="index">
+          <img :src="item" alt="" :style="{height: `${screenWidth<575?'3':screenWidth>=767?'5':'4'}vh`}">
+        </div>
+      </i-col>
+    </Row>
+
+    <!-- <foot /> -->
   </div>
 </template>
 
@@ -133,9 +91,15 @@
 import { mapState, mapMutations, mapActions } from 'vuex'
 
 import carousel from '@/components/carousel'
+import foot from '@/components/footer'
 
 export default {
-  components: { carousel },
+  computed: {
+    ...mapState([
+      'screenWidth', 'footerHeight'
+    ])
+  },
+  components: { carousel, foot },
   data () {
     return {
       searchVal: '',
@@ -184,6 +148,30 @@ export default {
           title: '友好合作模式',
           contain: '与全球译者、版权方发行建立了友好供应的合作模式'
         },
+      ],
+      logos: [
+        require('../resource/logo/zy.png'),
+        require('../resource/logo/zwzx.png'),
+        require('../resource/logo/hx.png'),
+        require('../resource/logo/fyxs.png'),
+        require('../resource/logo/mg.png'),
+        require('../resource/logo/ysxs.png'),
+        require('../resource/logo/jzwx.png'),
+        require('../resource/logo/zww.png'),
+        require('../resource/logo/ssyd.png'),
+        require('../resource/logo/my.png'),
+        require('../resource/logo/sxyj.png'),
+        require('../resource/logo/yhwx.png'),
+        require('../resource/logo/yyks.png'),
+        require('../resource/logo/bqm.png'),
+        require('../resource/logo/h.png'),
+        require('../resource/logo/jyxs.png'),
+        require('../resource/logo/lyzw.png'),
+        require('../resource/logo/lc.png'),
+        require('../resource/logo/qczw.png'),
+        require('../resource/logo/dyts.png'),
+        require('../resource/logo/zhwx.png'),
+        require('../resource/logo/yxd.png'),
       ]
     }
   },
@@ -317,13 +305,14 @@ $bg-color: #16ab8e;
     flex-flow: row wrap;
     justify-content: space-around;
     margin-top: 1rem;
+    width: 100%;
     &>div {
       flex: 1 0 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      width: 12rem;
+      width: 11rem;
       padding: 1rem;
       margin-bottom: 1rem;
       background: rgb(247,247,247);
@@ -334,6 +323,23 @@ $bg-color: #16ab8e;
         margin-top: 1rem;
         color: $font-color;
       }
+    }
+  }
+}
+.logo {
+  margin-top: 2rem;
+  color: $bg-color;
+  &>div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+    &>div {
+      flex: 1 0 1;
+      text-align: center;
+      margin: .5rem;
+      border: 1px solid rgb(247,247,247);
     }
   }
 }

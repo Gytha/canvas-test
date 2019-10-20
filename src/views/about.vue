@@ -1,7 +1,7 @@
 <template>
   <div>
     <Row type="flex" justify="center">
-      <img src="../resource/images/nav-bg1.png" alt="" class="top-bg">
+      <div class="top-bg"></div>
       <i-col span="22" :md="20" :lg="22" :xl="17">
         <i-col class="home-top" :xs="21" :sm="14" :md="12" :lg="9" :xl="9" :xxl="8">
           <h2>关于Hi translator</h2>
@@ -41,11 +41,15 @@
         </div>
       </i-col>
     </Row>
+
+    <!-- <foot /> -->
   </div>
 </template>
 
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
+
+import foot from '@/components/footer'
 
 export default {
   computed: {
@@ -53,6 +57,7 @@ export default {
       'screenWidth', 'footerHeight'
     ])
   },
+  components: { foot }
 }
 </script>
 
@@ -63,7 +68,10 @@ $bg-color: #16ab8e;
   position: absolute;
   top: 0;
   width: 100%;
-  height: 15rem;
+  height: 17rem;
+  background: url(../resource/images/nav-bg1.png);
+  background-size: cover;
+  object-fit: cover;
 }
 .home-top {
   margin: 1.6rem 0;

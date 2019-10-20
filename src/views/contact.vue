@@ -1,7 +1,7 @@
 <template>
   <div>
     <Row type="flex" justify="center">
-      <img src="../resource/images/nav-bg.png" alt="" class="top-bg">
+      <div class="top-bg"></div>
       <i-col span="22" :md="20" :lg="22" :xl="17">
         <i-col class="home-top" :xs="22" :sm="14" :md="12" :lg="9" :xl="9" :xxl="8">
           <h2>Contact Us</h2>
@@ -46,6 +46,7 @@
             </div>
           </div>
         </div>
+        <!-- <foot /> -->
       </i-col>
     </Row>
   </div>
@@ -53,6 +54,7 @@
 
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
+import foot from '@/components/footer'
 
 export default {
   computed: {
@@ -60,6 +62,7 @@ export default {
       'screenWidth', 'footerHeight'
     ])
   },
+  components: { foot },
   data () {
     return {
       markets: [
@@ -90,9 +93,9 @@ $bg-color: #16ab8e;
   top: 0;
   width: 100%;
   height: 17rem;
-  // height: 100%;
-  // background-size: cover;
-  // object-fit: cover;
+  background: url(../resource/images/nav-bg.png);
+  background-size: cover;
+  object-fit: cover;
 }
 .market {
   position: absolute;

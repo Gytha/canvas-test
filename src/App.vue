@@ -55,7 +55,9 @@
     <div class="container">
       <router-view/>
     </div>
-    <Row type="flex" justify="center" class="footer" ref="footer">
+    <!-- 页脚 -->
+    <foot/>
+    <!-- <Row type="flex" justify="center" class="footer" ref="footer">
       <i-col span="22" :md="23" :lg="23" :xl="18" style="z-index:1;">
         <Affix :offset-bottom="0" class="footer-affix">
           <div class="footer-content">
@@ -87,20 +89,21 @@
           </div>
         </Affix>
       </i-col>
-    </Row>
+    </Row> -->
   </div>
 </template>
 
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
 import spin from '@/components/spin'
+import foot from '@/components/footer'
 import { deflate } from 'zlib'
 
 export default {
-  components: { spin },
+  components: { spin, foot },
   computed: {
     ...mapState([
-      'screenWidth'
+      'navs', 'screenWidth'
     ])
   },
   watch: {
@@ -110,37 +113,13 @@ export default {
   },
   data () {
     return {
-      spinShow: false,
-      navs: [
-        {
-          name: '首页',
-          url: '/',
-          img: 'nav-bg.png',
-          active: true
-        }, {
-          name: '翻译服务',
-          url: '/translation',
-          active: false
-        }, {
-          name: '搜索译者',
-          url: '/translator',
-          active: false
-        }, {
-          name: '网文出海',
-          url: '/article',
-          active: false
-        }, {
-          name: '联系我们',
-          url: '/contact',
-          active: false
-        }
-      ]
+      spinShow: false
     }
   },
   mounted () {
     window.onresize = () => {
       return (() => {
-        this.SET_SCREENWIDTH(this.$refs.footer.$el.clientHeight)
+        this.SET_FOOTERHEIGHT(this.$refs.footer.$el.clientHeight)
         this.SET_SCREENWIDTH(document.body.clientWidth)
       })()
     }
@@ -148,25 +127,13 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'SET_SCREENWIDTH', 'SET_SCREENWIDTH'
+      'SET_SCREENWIDTH', 'SET_FOOTERHEIGHT'
     ]),
     // 点击菜单
     clickMenu (idx) {
       let { navs } = this
       navs.map((item, index) => item.active = index === idx)
       this.$router.push(navs[idx].url)
-    },
-    // 点击页脚
-    redirect(type) {
-      let { navs } = this
-      navs.map(item =>item.active = false)
-      switch(type) {
-        case 'index': navs[0].active=true;break;
-        case 'contact': navs[4].active=true;break;
-        case 'about':
-        default:
-      }
-      this.$router.push(`/${type}`);
     }
   }
 }
@@ -246,40 +213,5 @@ $bg-color: #16ab8e;
 .container {
   // position: relative;
   margin-top: 4.6rem;
-}
-.footer {
-  position: fixed;
-  bottom: 0;
-  padding: 1rem 0;
-  width: 100%;
-  z-index: 200;
-  background: #f5f5f5;
-  .footer-content {
-    color: $font-color;
-    &>div {
-      display: flex;
-      justify-content: space-between;
-      &>div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 2;
-        font-size: .8rem;
-        img {
-          cursor: pointer;
-        }
-        span {
-          margin: 0 .5rem;
-          cursor: pointer;
-        }
-      }
-      &>div.icon {
-        color: $bg-color;
-        span {
-          font-size: 1.3rem;
-        }
-      }
-    }
-  }
 }
 </style>
