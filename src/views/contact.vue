@@ -2,8 +2,8 @@
   <div>
     <Row type="flex" justify="center">
       <div class="top-bg"></div>
-      <i-col span="22" :md="20" :lg="22" :xl="17">
-        <i-col class="home-top" :xs="22" :sm="14" :md="12" :lg="9" :xl="9" :xxl="8">
+      <Col span="22" :md="20" :lg="22" :xl="17">
+        <Col class="home-top" :xs="22" :sm="14" :md="12" :lg="9" :xl="9" :xxl="8">
           <h2>Contact Us</h2>
           <p>Anytimg Anywhere</p>
           <p>Direct trading translators to optimize translation quality,speed,price</p>
@@ -11,17 +11,17 @@
             <span>全球互通</span>·
             <span>与翻译人员直接交易，优化翻译质量、速度、价格</span>
           </div>
-        </i-col>
-      </i-col>
+        </Col>
+      </Col>
       <!-- 市场 -->
       <Row class="market" type="flex" justify="center">
-        <i-col span="22" :md="20" :lg="22" :xl="17">
+        <Col span="22" :md="20" :lg="22" :xl="17">
           <span :class="item.active?'active':''" v-for="(item, index) in markets" :key="index" @click="clickMarket(index)">{{item.name}}</span>
-        </i-col>
+        </Col>
       </Row>
     </Row>
     <Row type="flex" justify="center">
-      <i-col class="home-content" span="22" :md="20" :lg="22" :xl="17" :style="{marginBottom: `${footerHeight}px`}">
+      <Col class="home-content" span="22" :md="20" :lg="22" :xl="17" :style="{marginBottom: `${footerHeight}px`}">
         <div>
           <div class="contact">
             <p>联系我们</p>
@@ -47,7 +47,7 @@
           </div>
         </div>
         <!-- <foot /> -->
-      </i-col>
+      </Col>
     </Row>
   </div>
 </template>
@@ -91,9 +91,10 @@ $bg-color: #16ab8e;
 .top-bg {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   height: 17rem;
-  background: url(../resource/images/nav-bg.png);
+  background: url('../resource/images/nav-bg.png');
   background-size: cover;
   object-fit: cover;
 }

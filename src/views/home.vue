@@ -2,7 +2,7 @@
   <div>
     <Row type="flex" justify="center">
       <img src="../resource/images/home-bg.png" alt="" class="top-bg">
-      <i-col span="22" :md="20" :lg="12" :xl="10" class="top-search">
+      <Col span="22" :md="20" :lg="12" :xl="10" class="top-search">
         <div>
           <h1>首创T2C模式的云端翻译系统</h1>
           <p>覆盖多种语言，专业精准翻译的语言服务专家</p>
@@ -14,10 +14,10 @@
             <div>下一步</div>
           </div>
         </div>
-      </i-col>
+      </Col>
     </Row>
     <Row type="flex" justify="center">
-      <i-col class="mission" span="22" :md="20" :lg="22" :xl="17" >
+      <Col class="mission" span="22" :md="20" :lg="22" :xl="17" >
         <div class="contact-detail">
           <h2>Hitranslator快速找到所需译者</h2>
           <p>聚集全球译者，链接用户和译者，让用户快速找到全球各地的译者，由译者为用户提供本地化服务</p>
@@ -43,16 +43,16 @@
           </div>
         </div>
         <img src="../resource/images/user.png" alt="mission">
-      </i-col>
+      </Col>
     </Row>
     <Row type="flex" justify="center" class="translator">
-      <i-col span="22" :md="20" :lg="22" :xl="17">
+      <Col span="22" :md="20" :lg="22" :xl="17">
         <h2>AI翻译+人工翻译助力网文出海</h2>
         <Row type="flex" justify="center">
-          <i-col span="22" :md="18" :lg="22" :xl="17">
+          <Col span="22" :md="18" :lg="22" :xl="17">
             <p>通过PE+MT木事创造及时性、本地化、规模化、精准性的翻译生产网络，与全球各国版权方译者、发行方通力合作，用创新模式传播中华文化，助力网文出海和文化交流传播</p>
             <p class="contact-us">支持API接口对接<span> 联系我们</span></p>
-          </i-col>
+          </Col>
         </Row>
         <div class="detail">
           <carousel style="height: 15rem;" :swiperOption="swiperOption"/>
@@ -62,27 +62,33 @@
             </el-carousel-item>
           </el-carousel> -->
         </div>
-      </i-col>
+      </Col>
     </Row>
     <Row type="flex" justify="center" class="why-choose">
       <h1>为什么选择Hitranslator</h1>
-      <i-col span="22" :md="19" :lg="22" :xl="17">
-        <div v-for="(item,index) in choose" :key="index">
-          <i :class="['iconfont', item.icon]"></i>
-          <h2>{{item.title}}</h2>
-          <p>{{item.contain}}</p>
+      <Col span="24" :md="17" :lg="22" :xl="17">
+        <div>
+          <div v-for="(item,index) in choose" :key="index">
+            <i :class="['iconfont', item.icon]"></i>
+            <h2>{{item.title}}</h2>
+            <p>{{item.contain}}</p>
+          </div>
         </div>
-      </i-col>
+      </Col>
     </Row>
+    <!-- 合作伙伴 -->
     <Row type="flex" justify="center" class="logo" :style="{marginBottom: `${footerHeight}px`}">
       <h1>合作伙伴</h1>
-      <i-col span="22" :md="19" :lg="22" :xl="17">
-        <div v-for="(item,index) in logos" :key="index">
-          <img :src="item" alt="" :style="{height: `${screenWidth<575?'3':screenWidth>=767?'5':'4'}vh`}">
+      <Col span="22" :md="18" :lg="22" :xl="17">
+        <div>
+          <div v-for="(item,index) in logos" :key="index">
+            <img :src="item" alt="" :style="{height: `${screenWidth<575?'3':screenWidth>=767?'5':'4'}vh`}">
+          </div>
         </div>
-      </i-col>
+      </Col>
     </Row>
 
+    <!-- 页脚 -->
     <!-- <foot /> -->
   </div>
 </template>
@@ -189,6 +195,7 @@ $bg-color: #16ab8e;
 .top-bg {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   height: 25rem;
 }
@@ -300,7 +307,11 @@ $bg-color: #16ab8e;
 .why-choose {
   margin-top: 2rem;
   color: $bg-color;
-  &>div {
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+  &>div>div {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -329,7 +340,11 @@ $bg-color: #16ab8e;
 .logo {
   margin-top: 2rem;
   color: $bg-color;
-  &>div {
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+  &>div>div {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;

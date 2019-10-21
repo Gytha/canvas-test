@@ -2,7 +2,7 @@
   <div id="app">
     <spin :spinShow="spinShow" />
     <Row type="flex" justify="center">
-      <i-col span="22" :md="23" :lg="23" :xl="18" class="top-bar">
+      <Col span="22" :md="23" :lg="23" :xl="18" class="top-bar">
         <!-- <div v-if="screenWidth>=767"><br/><br/></div> -->
         <!-- <Affix :offset-top="20" class="affix"> -->
         <div class="div-affix">
@@ -50,46 +50,13 @@
           </div>
         </div>
         <!-- </Affix> -->
-      </i-col>
+      </Col>
     </Row>
     <div class="container">
       <router-view/>
     </div>
     <!-- 页脚 -->
-    <foot/>
-    <!-- <Row type="flex" justify="center" class="footer" ref="footer">
-      <i-col span="22" :md="23" :lg="23" :xl="18" style="z-index:1;">
-        <Affix :offset-bottom="0" class="footer-affix">
-          <div class="footer-content">
-            <div>
-              <div>
-                <img src="./resource/images/logo.png" alt="" style="height: 1.6rem;" @click="redirect('index')">
-                <span @click="redirect('about')">关于我们</span>
-                <span @click="redirect('contact')">联系我们</span>
-                <span>招贤纳士</span>
-              </div>
-              <div class="icon">
-                <span class="iconfont icon-f-copy"></span>
-                <span class="iconfont icon-twitter"></span>
-                <span class="iconfont icon-weixin"></span>
-                <span class="iconfont icon-weibo"></span>
-              </div>
-            </div>
-            <div>
-              <div class="copyright">
-                <span>陕CP备14000715号</span>
-                <span>西安有言在前网络科技有限公司</span>
-                <span>&#169; Hitranslator Inc.2019</span>
-              </div>
-              <div>
-                <span>法律声明</span>
-                <span>隐私声明</span>
-              </div>
-            </div>
-          </div>
-        </Affix>
-      </i-col>
-    </Row> -->
+    <foot />
   </div>
 </template>
 
@@ -117,12 +84,13 @@ export default {
     }
   },
   mounted () {
-    window.onresize = () => {
-      return (() => {
-        this.SET_FOOTERHEIGHT(this.$refs.footer.$el.clientHeight)
-        this.SET_SCREENWIDTH(document.body.clientWidth)
-      })()
-    }
+    // window.onresize = () => {
+    //   return (() => {
+    //     console.log(this.$refs.footer.$el.clientHeight)
+    //     this.SET_FOOTERHEIGHT(this.$refs.footer.$el.clientHeight)
+    //     this.SET_SCREENWIDTH(document.body.clientWidth)
+    //   })()
+    // }
     setTimeout(() => {this.spinShow = false}, 1500)
   },
   methods: {

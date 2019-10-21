@@ -2,8 +2,8 @@
   <div>
     <Row type="flex" justify="center">
       <div class="top-bg"></div>
-      <i-col span="22" :md="20" :lg="22" :xl="17">
-        <i-col class="home-top" :xs="21" :sm="14" :md="12" :lg="9" :xl="9" :xxl="8">
+      <Col span="22" :md="20" :lg="22" :xl="17">
+        <Col class="home-top" :xs="21" :sm="14" :md="12" :lg="9" :xl="9" :xxl="8">
           <h2>关于Hi translator</h2>
           <p>有言在前（LanguageAI）是一家语言服务和全球化公司是通过互联网组织一折为市场提供语言服务，治理全球化传播</p>
           <div>
@@ -12,11 +12,11 @@
             <span>沟通世界</span>·
             <span>传承文明</span>
           </div>
-        </i-col>
-      </i-col>
+        </Col>
+      </Col>
     </Row>
     <Row type="flex" justify="center">
-      <i-col class="home-content" span="22" :md="20" :lg="22" :xl="17" :style="{marginBottom: `${footerHeight}px`}">
+      <Col class="home-content" span="22" :md="20" :lg="22" :xl="17" :style="{marginBottom: `${footerHeight}px`}">
         <div class="number">
           <div>
             <h1>2018</h1>
@@ -39,7 +39,7 @@
             <div>Our mission is to organize the world's translators and make it universally accessible and useful.Different languages also chat</div>
           </div>
         </div>
-      </i-col>
+      </Col>
     </Row>
 
     <!-- <foot /> -->
@@ -67,9 +67,10 @@ $bg-color: #16ab8e;
 .top-bg {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   height: 17rem;
-  background: url(../resource/images/nav-bg1.png);
+  background: url('../resource/images/nav-bg1.png');
   background-size: cover;
   object-fit: cover;
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Row type="flex" justify="center" class="footer" ref="footer">
-      <i-col span="22" :md="23" :lg="23" :xl="18" style="z-index:1;">
+      <Col span="22" :md="23" :lg="23" :xl="18" style="z-index:1;">
         <!-- <Affix :offset-bottom="0" class="footer-affix"> -->
           <div class="footer-content">
             <div>
@@ -31,7 +31,7 @@
             </div>
           </div>
         <!-- </Affix> -->
-      </i-col>
+      </Col>
     </Row>
   </div>
 </template>
@@ -45,7 +45,18 @@ export default {
       'navs'
     ])
   },
+  mounted() {
+    window.onresize = () => {
+      return (() => {
+        this.SET_FOOTERHEIGHT(this.$refs.footer.$el.clientHeight)
+        this.SET_SCREENWIDTH(document.body.clientWidth)
+      })()
+    }
+  },
   methods: {
+    ...mapMutations([
+      'SET_SCREENWIDTH', 'SET_FOOTERHEIGHT'
+    ]),
     // 点击页脚
     redirect(type) {
       let { navs } = this
